@@ -1,0 +1,21 @@
+from random import randint
+
+def roll_dice():
+    play_again = True
+    while play_again:
+        amount = int(input("How many dice woud you like to roll?: "))
+        
+        list = []
+        for i in range(amount):
+            x = randint(1,6)
+            list.append(x)
+        print(list)
+        print(f"The sum of the rolls is {sum(list)}")
+        another_game = input("Do you wanna play again?: ")
+        if another_game == "No":
+            play_again = False
+            print("Ok. We're done here.")
+        else:
+            play_again = True
+        
+roll_dice()
