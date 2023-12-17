@@ -1,0 +1,37 @@
+#rock, paper, scissors, not the full game, just trying to get the jist of it.
+import random
+#function to get user input
+def player_choice():
+    player_chooses = input("r/p/s?: ")
+    return player_chooses
+#function to get computer choice
+def comp_choice():
+    options = ['r','p','s']
+    player = random.choice(options)
+    return player
+#function to determine winner, 2 parameters, one for user input, one for computer choice
+def det_winner(user_input,comp_input):
+    if user_input == 'p' and comp_input == 's':
+        return "You lose."
+        
+    if user_input == 'p' and comp_input == 'r':
+        return "You win."
+        
+    if user_input == 'p' and comp_input == 'p':
+        return "Tie."
+        
+#function for main game loop 
+def main_game_loop():
+    while True:
+        print("Let's play r/p/s")
+        user_choice = player_choice()
+        comps_choice = comp_choice()
+        print(f"You chose {user_choice} and the comp chose {comps_choice}")
+        result = det_winner(user_choice,comps_choice)
+        print(result)
+        play_again = input("Do you wanna play again?: ")
+        if play_again != "y":
+            print("Thanks for playing.")
+            break
+#run the game here
+main_game_loop()
