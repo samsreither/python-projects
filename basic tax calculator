@@ -1,0 +1,17 @@
+#function to calculate tax based on income and tax rate
+def tax_calculator(income, tax_rate):
+    tax_owed = income * tax_rate
+    return tax_owed
+
+#main function
+def main():
+    income = float(input("Enter your income: "))
+    tax_rate = float(input("Enter your tax rate as a decimal: "))
+    
+    tax = tax_calculator(income, tax_rate)
+    
+    print(f"Income: ${income}")
+    print(f"Tax Rate: {tax_rate*100}%")
+    print("Tax Owed: ", tax)
+    
+main()
